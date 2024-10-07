@@ -1,13 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import CurrencyViewer from "./pages/currencyViewer/CurrencyViewer";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <>
-      <div className=" text-danger">App</div>
-      <Link to="/card">card card</Link>
-    </>
+    <div className="min-h-screen bg-gray-100">
+      <CurrencyViewer />
+    </div>
   );
-}
+};
 
 export default App;

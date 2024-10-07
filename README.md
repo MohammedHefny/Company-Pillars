@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+# React Currency Viewer Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Objective
 
-## Available Scripts
+Develop a web application using React that enables users to view currency information fetched from the Alpha Vantage API. This application offers a search feature by currency code, the ability to select a date range for historical exchange rates against USD, and displays the results in a table. A key feature is caching these results to enhance performance on subsequent fetches.
 
-In the project directory, you can run:
+## Requirements
 
-### `npm start`
+1. **API Key**: Secure a free API key from [Alpha Vantage's documentation page](https://www.alphavantage.co/support/#api-key) to authenticate your requests.
+2. **Search Functionality**: Implement a search bar allowing users to enter a currency code (e.g., USD, EUR). The application should fetch the latest exchange rate for the selected currency against USD using the Alpha Vantage API.
+3. **Date Range Selection**: Provide two inputs for users to select a start date and an end date. Fetch and display the historical exchange rates for the selected currency against USD for this date range.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+4. **Results Table**: Show the fetched currency data in a table, with each row displaying a different date within the selected range and its corresponding exchange rate.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+5. **Caching Mechanism**: Implement caching to store the results of fetched data. If a user makes a subsequent request for the same currency and date range, the application should check the cache before making another API call. This will improve the application's performance by reducing load times and API requests.
 
-### `npm test`
+6. **Error Handling**: Implement comprehensive error handling for scenarios such as invalid currency codes, failed API requests, or out-of-range dates.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+7. **Styling**: Use [TailwindCSS](https://tailwindcss.com/) for the application's styling, aiming for a clean and user-friendly interface.
 
-### `npm run build`
+## Deliverables
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- A React application fulfilling the above requirements, including caching.
+- A README file with setup instructions, including environment variable configuration (e.g., API key).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To run the Currency Viewer application locally, follow these steps:
 
-### `npm run eject`
+1. **Clone the Repository**:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   git clone https://github.com/your-username/react-currency-viewer.git
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Navigate to the Project Directory**:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+cd react-currency-viewer 3. **Install Dependencies:**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Make sure you have Node.js installed. Then, run:
 
-## Learn More
+npm install 4. **Set Up Environment Variables:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Create a .env file in the root directory of the project and add your Alpha Vantage API key:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+REACT_APP_ALPHA_VANTAGE_API_KEY=your_alpha_vantage_api_key 5. **Run the Application:**
+
+Start the development server:
+
+npm start 6. **Open in Your Browser:**
+
+Navigate to http://localhost:3000 to view the application.
+
+**Usage**
+
+Enter a currency code in the search bar (e.g., EUR, GBP).
+Select a start date and an end date.
+Click on the "Fetch" button to retrieve historical exchange rates.
+View the results displayed in a table.
+**Evaluation Criteria**
+
+Functionality: The app should be fully functional, addressing all stated requirements.
+Code Quality: Code should be clean, well-organized, and adhere to best practices.
+UI/UX Design: The app should be easy to use and visually appealing.
+Error Handling: Errors should be gracefully handled and communicated to the user.
+Caching Implementation: Effective caching that reduces API calls and improves performance.
+
+API Key
+The regular API key has a limit of 25 requests per day.
